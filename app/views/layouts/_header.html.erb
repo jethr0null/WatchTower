@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <div class="container">
+  <%= link_to "WatchTower", root_path, id: "logo" %>
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Company1</a></li>
+    <li role="presentation"><a href="#">Company2</a></li>
+    <li role="presentation"><a href="#">Company3</a></li>
+  </ul>
+  <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+        <li><%= link_to "#{current_user.name.upcase}", '#' %></li>
+        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+    </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "Log in", login_path %></li>
+      <% end %>
+</div>
+
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
