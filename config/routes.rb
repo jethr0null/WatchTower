@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :accounts
   resources :users
+  resources :customers
 
   root                    'sessions#new'
   get    'add_account' => 'accounts#new'
