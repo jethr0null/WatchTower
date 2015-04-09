@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Customer Name</th>
+    <th>Actions</th>
+  </tr>
+
+<!-- Show each customer in the table with Edit and Delete options -->
+
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= link_to 'Edit', edit_customer_path(customer.id) %> |
+          <%= link_to 'Delete', customer_path(customer), method: :delete,
+          data: {confirm: 'Are you sure?'} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>
