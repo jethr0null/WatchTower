@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
+    @customers = Customer.all
   end
 
   # GET /accounts/1
@@ -70,6 +71,6 @@ class AccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:name, :account_number)
+      params.require(:account).permit(:name, :account_number, :customer_name)
     end
 end

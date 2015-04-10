@@ -1,9 +1,139 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Customer Account:</strong>
   <%= @customer.name %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<% provide(:title, "Customer Account: #{@customer.name}") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | WatchTower Dashboard</title>
+  </head>
+    <body>
+      <%= render 'layouts/sidebar' %>
+
+       <h1 class="sub-header">Triggered Alerts</h1>
+       <div class="table-responsive">
+         <table class="table table-striped">
+           <thead>
+             <tr>
+               <th>Alert Name</th>
+               <th>Details</th>
+               <th>Customer/Account</th>
+               <th>Audit Entries</th>
+               <th>Launch in CM</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>1,001</td>
+               <td>Lorem</td>
+               <td>ipsum</td>
+               <td>dolor</td>
+               <td>sit</td>
+             </tr>
+             <tr>
+               <td>1,002</td>
+               <td>amet</td>
+               <td>consectetur</td>
+               <td>adipiscing</td>
+               <td>elit</td>
+             </tr>
+             <tr>
+               <td>1,003</td>
+               <td>Integer</td>
+               <td>nec</td>
+               <td>odio</td>
+               <td>Praesent</td>
+             </tr>
+             <tr>
+               <td>1,003</td>
+               <td>libero</td>
+               <td>Sed</td>
+               <td>cursus</td>
+               <td>ante</td>
+             </tr>
+             <tr>
+               <td>1,004</td>
+               <td>dapibus</td>
+               <td>diam</td>
+               <td>Sed</td>
+               <td>nisi</td>
+             </tr>
+             <tr>
+               <td>1,005</td>
+               <td>Nulla</td>
+               <td>quis</td>
+               <td>sem</td>
+               <td>at</td>
+             </tr>
+             <tr>
+               <td>1,006</td>
+               <td>nibh</td>
+               <td>elementum</td>
+               <td>imperdiet</td>
+               <td>Duis</td>
+             </tr>
+             <tr>
+               <td>1,007</td>
+               <td>sagittis</td>
+               <td>ipsum</td>
+               <td>Praesent</td>
+               <td>mauris</td>
+             </tr>
+           </table>
+
+
+             <h1 class="sub-header">All Alerts</h1>
+             <div class="table-responsive">
+               <table class="table table-striped">
+                 <thead>
+                   <tr>
+                     <th>Alert Name</th>
+                     <th>Details</th>
+                     <th>Customer/Account</th>
+                     <th>Audit Entries</th>
+                     <th>Launch in CM</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <td>1,001</td>
+                     <td>Lorem</td>
+                     <td>ipsum</td>
+                     <td>dolor</td>
+                     <td>sit</td>
+                   </tr>
+                   <tr>
+                     <td>1,002</td>
+                     <td>amet</td>
+                     <td>consectetur</td>
+                     <td>adipiscing</td>
+                     <td>elit</td>
+                   </tr>
+                   <tr>
+                     <td>1,003</td>
+                     <td>Integer</td>
+                     <td>nec</td>
+                     <td>odio</td>
+                     <td>Praesent</td>
+                   </tr>
+
+           </tbody>
+         </table>
+       </div>
+     </div>
+   </div>
+ </div>
+
+       <!-- Bootstrap core JavaScript
+       ================================================== -->
+       <!-- Placed at the end of the document so the pages load faster -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+       <script src="../../dist/js/bootstrap.min.js"></script>
+       <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+       <script src="../../assets/js/vendor/holder.js"></script>
+       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+       <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+     </body>
+   </html>

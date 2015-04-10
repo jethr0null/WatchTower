@@ -5,6 +5,7 @@
 
 <table class="table table-striped">
   <tr>
+    <th>Customer Name</th>
     <th>Account Name</th>
     <th>Account Number</th>
     <th>Actions</th>
@@ -14,6 +15,7 @@
 
   <% @accounts.each do |account| %>
     <tr>
+      <td><%= account.customer_name %></td>
       <td><%= account.name %></td>
       <td><%= account.account_number %></td>
       <td><%= link_to 'Edit', edit_account_path(account.id) %> |
