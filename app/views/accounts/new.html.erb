@@ -10,12 +10,15 @@
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :account_number %>
-      <%= f.number_field :account_number, class: 'form-control' %>
+      <%= f.text_field :account_number, class: 'form-control' %>
 
-      <%= f.label :customer_name %>
-      <%= f.text_field :customer_name, class: 'form-control' %>
+      <%= f.hidden_field :customer_id, class: 'form-control', style: 'opacity:0', value: params[:customer_id] %>
 
       <%= f.submit "Add Account", class: "btn btn-primary" %>
     <% end %>
+  </div>
+  <div>
+    <%= params %>
+    <%= params[:customer_id] %>
   </div>
 </div>

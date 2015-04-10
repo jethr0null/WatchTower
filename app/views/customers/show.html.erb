@@ -4,6 +4,8 @@
 </p>
 
 <% provide(:title, "Customer Account: #{@customer.name}") %>
+<%= link_to "Add Account", new_account_path %>
+<%= link_to "Add Account Test", new_account_path(:customer_id => @customer.id) %>
 <!DOCTYPE html>
 <html>
   <head>
