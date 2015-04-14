@@ -5,7 +5,7 @@
     <title><%= yield(:title) %> | WatchTower Dashboard</title>
   </head>
     <body>
-      <%= render 'layouts/sidebar' %>
+      <%= render 'layouts/sidebar', :customers => Customer.all %>
 
        <h1 class="sub-header">Triggered Alerts</h1>
        <div class="table-responsive">
