@@ -31,9 +31,9 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to dashboard_path, notice: 'Customer was successfully created.' }
+        format.html { redirect_to dashboard_path}
       #  format.json { render :show, status: :created, location: @customer }
-  
+      flash[:success] = 'Customer was successfully added.'
       else
         format.html { render :new }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
