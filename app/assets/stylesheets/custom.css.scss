@@ -43,12 +43,12 @@ input {
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
+//.field_with_errors {
+//  @extend .has-error;
+  //.form-control {
+    //color: $state-danger-text;
+//  }
+//}
 
 .checkbox {
   margin-top: -10px;
