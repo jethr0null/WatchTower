@@ -7,6 +7,7 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.all
     @accounts = Account.all
+    @current_account = Account.find_by(params[:id])
   end
 
   # GET /customers/1
@@ -65,6 +66,10 @@ class CustomersController < ApplicationController
       flash[:success] = 'Customer was successfully deleted.'
       #format.json { head :no_content }
     end
+  end
+
+  def dashboard
+    @customer = Customer.find(params[:format])
   end
 
   private

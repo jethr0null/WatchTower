@@ -17,6 +17,14 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   def new
     @account = Account.new
+    @customers = Customer.all
+
+    #respond_to do |format|
+      if @account.save
+        redirect_to customer_dashboard_path
+        flash[:success] = 'Account was successfully created.'
+      end
+    #end
   end
 
   # GET /accounts/1/edit
@@ -27,10 +35,11 @@ class AccountsController < ApplicationController
   # POST /accounts.json
   def create
     @account = Account.new(account_params)
+    @customers = Customer.all
 
     respond_to do |format|
       if @account.save
-        format.html { redirect_to @account }
+        format.html { redirect_to dashboard_path }
         flash[:success] = 'Account was successfully created.'
         #format.json { render :show, status: :created, location: @account }
       else
@@ -74,6 +83,6 @@ class AccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:name, :account_number, :customer_n)
+      params.require(:account).permit(:name, :account_number, :customer_name)
     end
 end

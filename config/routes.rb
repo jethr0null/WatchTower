@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   post   'login'       => 'sessions#create'
   delete 'logout'      => 'sessions#destroy'
   get    'dashboard'   => 'static_pages#dashboard'
+  # Will do this correctly (add logic to main dash) later
+  #TODO Fix format -> id in route
+  get    'customer_dashboard'   => 'customers#dashboard'
 end
