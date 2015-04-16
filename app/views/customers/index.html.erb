@@ -17,9 +17,11 @@
       <td><%= customer.name %></td>
       <td><%= customer.list_account_names.join(',')%>
         <td><%= customer.list_account_numbers.join(',')%>
-      <td><%= link_to 'Edit', edit_customer_path(customer.id) %> |
+      <td><%= link_to 'Add Account', new_account_path(@current_account) %> |
+          <%= link_to 'Edit', edit_customer_path(customer.id) %> |
           <%= link_to 'Delete', customer_path(customer), method: :delete,
-          data: {confirm: 'Are you sure?'} %>
+           data: {confirm: 'Are you sure?'} %>
+          <%#= link_to 'Add/Update Account', edit_account_path(@current_account) %>
       </td>
     </tr>
   <% end %>

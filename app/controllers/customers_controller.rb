@@ -7,6 +7,7 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.all
     @accounts = Account.all
+    @current_account = Account.find_by(params[:id])
   end
 
   # GET /customers/1
