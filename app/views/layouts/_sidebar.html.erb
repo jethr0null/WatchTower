@@ -12,7 +12,7 @@
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="accounts#index">Manage Accounts</a></li>
+            <li><a href="list_accounts.<%=customer.id%>">Manage Accounts</a></li>
             <li><a href="customer_dashboard.<%=customer.id%>">Manage Alerts</a></li>
             <li><%= link_to 'Delete Customer', customer_path(customer), method: :delete,
              data: {confirm: 'Are you sure?'} %></li>
