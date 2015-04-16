@@ -64,7 +64,7 @@ class CustomersController < ApplicationController
     customer_accounts.each do |account|
       account.destroy
     end
-      
+
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_path}
