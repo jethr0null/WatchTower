@@ -60,6 +60,11 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
+    customer_accounts = @customer.list_customer_accounts
+    customer_accounts.each do |account|
+      account.destroy
+    end
+      
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_path}
@@ -70,6 +75,11 @@ class CustomersController < ApplicationController
 
   def dashboard
     @customer = Customer.find(params[:format])
+  end
+
+  def list_accounts
+    @customer = Customer.find(params[:format])
+    @customer_accounts = @customer.list_customer_accounts
   end
 
   private

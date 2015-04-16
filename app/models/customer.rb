@@ -11,4 +11,8 @@ class Customer < ActiveRecord::Base
   def list_account_numbers()
     Account.where(:customer_name => self.name).map {|account| account.account_number}
   end
+
+  def list_customer_accounts()
+    Account.where(:customer_name => self.name)
+  end
 end

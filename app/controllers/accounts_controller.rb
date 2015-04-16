@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
   # GET /accounts/1
   # GET /accounts/1.json
   def show
-    @accounts = Account.find(params[:id])
+    @account = Account.find(params[:id])
   end
 
   # GET /accounts/new
