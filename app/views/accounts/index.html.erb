@@ -15,7 +15,7 @@
 
   <% @accounts.each do |account| %>
     <tr>
-      <td><%= account.customer_name %></td>
+      <td><%= account.customer.name %></td>
       <td><%= account.name %></td>
       <td><%= account.account_number %></td>
       <td><%= link_to 'Edit', edit_account_path(account.id) %> |

@@ -3,4 +3,5 @@ class Account < ActiveRecord::Base
 
   validates :account_number, presence: true, length: { is: 5 }
   validates :name, presence: true
+  validates :customer_id, presence: true
 end
