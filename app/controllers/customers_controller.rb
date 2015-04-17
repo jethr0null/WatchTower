@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
 
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :destroy_accounts, only: [:destroy]
 
   # GET /customers
   # GET /customers.json
@@ -59,12 +60,14 @@ class CustomersController < ApplicationController
 
   # DELETE /customers/1
   # DELETE /customers/1.json
-  def destroy
+  def destroy_accounts
     customer_accounts = @customer.list_customer_accounts
     customer_accounts.each do |account|
       account.destroy
     end
+  end
 
+  def destroy
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_path}
