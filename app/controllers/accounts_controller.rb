@@ -19,13 +19,6 @@ class AccountsController < ApplicationController
   def new
     @account = Account.new
     @customers = Customer.all
-
-    #respond_to do |format|
-      if @account.save
-        redirect_to customer_dashboard_path
-        flash[:success] = 'Account was successfully created.'
-      end
-    #end
   end
 
   # GET /accounts/1/edit
@@ -44,10 +37,7 @@ class AccountsController < ApplicationController
         flash[:success] = 'Account was successfully created.'
         #format.json { render :show, status: :created, location: @account }
       else
-        @account.errors.full_messages.each do |msg|
-          flash.now[:danger] = msg
-          format.html { render :new }
-        end
+        format.html { render :new }
       end
         #format.json { render json: @account.errors, status: :unprocessable_entity }
     end

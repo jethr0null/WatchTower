@@ -10,12 +10,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      log_in @user
-      flash[:success] = "User Successfully Created"
-      redirect_to @user
-    else
-      render 'new'
+
+    respond_to do |format|
+      if @user.save
+        log_in @user
+        flash[:success] = "User Successfully Created"
+        format.html { redirect_to @user }
+      else
+        @user.errors.full_messages.each do |msg|
+          flash.now[:danger] = msg
+          format.html { render :new }
+        end
+      end
     end
   end
 

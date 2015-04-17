@@ -38,10 +38,7 @@ class CustomersController < ApplicationController
         flash[:success] = 'Customer was successfully added.'
       #  format.json { render :show, status: :created, location: @customer }
       else
-        @customer.errors.full_messages.each do |msg|
-          flash.now[:danger] = msg
-          format.html { render :new }
-        end
+        format.html { render :new }
         #format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end
