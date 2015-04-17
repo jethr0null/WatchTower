@@ -43,9 +43,12 @@ class AccountsController < ApplicationController
         flash[:success] = 'Account was successfully created.'
         #format.json { render :show, status: :created, location: @account }
       else
-        format.html { render :new }
-        #format.json { render json: @account.errors, status: :unprocessable_entity }
+        @account.errors.full_messages.each do |msg|
+          flash.now[:danger] = msg
+          format.html { render :new }
+        end
       end
+        #format.json { render json: @account.errors, status: :unprocessable_entity }
     end
   end
 
