@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
 
+  before_filter :confirm_logged_in
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   before_action :destroy_accounts, only: [:destroy]
 
