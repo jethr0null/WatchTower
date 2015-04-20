@@ -5,14 +5,16 @@ class Customer < ActiveRecord::Base
   validates :name, presence: true
 
   def list_account_names()
-    Account.where(:customer_name => self.name).map {|account| account.name}
+    self.accounts.map {|account| account.name}
+    #Account.where(:customer_id => self.id).map {|account| account.name}
   end
 
   def list_account_numbers()
-    Account.where(:customer_name => self.name).map {|account| account.account_number}
+    self.accounts.map {|account| account.account_number}
+    #Account.where(:customer_id => self.id).map {|account| account.account_number}
   end
 
   def list_customer_accounts()
-    Account.where(:customer_name => self.name)
+    Account.where(:customer_id => self.id)
   end
 end

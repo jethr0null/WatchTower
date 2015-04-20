@@ -1,8 +1,7 @@
 class CustomersController < ApplicationController
 
-  before_filter :confirm_logged_in
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
- 
+
   def index
     @customers = Customer.all
     @accounts = Account.all
@@ -58,7 +57,7 @@ class CustomersController < ApplicationController
 
   def list_accounts
     @customer = Customer.find(params[:format])
-    @customer_accounts = @customer.list_customer_accounts
+    @customer_accounts = @customer.accounts
   end
 
   private

@@ -1,4 +1,6 @@
-class SessionsController < ApplicationController
+class SessionsController < ActionController::Base
+  include SessionsHelper
+  layout 'application'
 
   def new
   end

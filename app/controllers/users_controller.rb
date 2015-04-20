@@ -1,4 +1,6 @@
-class UsersController < ApplicationController
+class UsersController < ActionController::Base
+  include SessionsHelper
+  layout 'application'
 
   def show
     @user = User.find(params[:id])
