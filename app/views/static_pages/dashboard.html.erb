@@ -2,13 +2,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-table.css"> -->
     <title><%= yield(:title) %> | WatchTower Dashboard</title>
   </head>
     <body>
       <%= render 'layouts/sidebar', :customers => Customer.all %>
 
-       <h1 class="sub-header">Triggered Alerts</h1>
-       <div class="table-responsive">
+      <h1 class="sub-header">Triggered Alerts</h1>
+      <div class="table-responsive">
+        <table class="table table-striped" data-toggle="table" data-sort-order="desc">
+          <thead>
+          <tr>
+              <th data-field="Alert Name"
+                  data-sortable="true">
+                      Alert Name
+              </th>
+              <th data-field="Details"
+                  data-sortable="true">
+                      Details
+              </th>
+              <th data-field="Customer/Account"
+                  data-sortable="true">
+                      Customer/Account
+              </th>
+              <th data-field="Audit Entries"
+                  data-sortable="true">
+                      Audit Entries
+              </th>
+              <th data-field="Launch in CM"
+                  data-sortable="true">
+                      Launch in CM
+              </th>
+          </tr>
+    <!-- </thead>
          <table class="table table-striped">
            <thead>
              <tr>
@@ -18,7 +45,7 @@
                <th>Audit Entries</th>
                <th>Launch in CM</th>
              </tr>
-           </thead>
+           </thead> -->
            <tbody>
              <tr>
                <td>1,001</td>
@@ -78,57 +105,112 @@
              </tr>
            </table>
 
-
-             <h1 class="sub-header">All Alerts</h1>
-             <div class="table-responsive">
-               <table class="table table-striped">
-                 <thead>
-                   <tr>
-                     <th>Alert Name</th>
-                     <th>Details</th>
-                     <th>Customer/Account</th>
-                     <th>Audit Entries</th>
-                     <th>Launch in CM</th>
-                   </tr>
-                 </thead>
-                 <tbody>
-                   <tr>
-                     <td>1,001</td>
-                     <td>Lorem</td>
-                     <td>ipsum</td>
-                     <td>dolor</td>
-                     <td>sit</td>
-                   </tr>
-                   <tr>
-                     <td>1,002</td>
-                     <td>amet</td>
-                     <td>consectetur</td>
-                     <td>adipiscing</td>
-                     <td>elit</td>
-                   </tr>
-                   <tr>
-                     <td>1,003</td>
-                     <td>Integer</td>
-                     <td>nec</td>
-                     <td>odio</td>
-                     <td>Praesent</td>
-                   </tr>
-
-           </tbody>
-         </table>
-       </div>
-     </div>
-   </div>
- </div>
+           <h1 class="sub-header">All Alerts</h1>
+           <div class="table-responsive">
+             <table class="table table-striped" data-toggle="table" data-sort-order="desc">
+               <thead>
+               <tr>
+                   <th data-field="Alert Name"
+                       data-sortable="true">
+                           Alert Name
+                   </th>
+                   <th data-field="Details"
+                       data-sortable="true">
+                           Details
+                   </th>
+                   <th data-field="Customer/Account"
+                       data-sortable="true">
+                           Customer/Account
+                   </th>
+                   <th data-field="Audit Entries"
+                       data-sortable="true">
+                           Audit Entries
+                   </th>
+                   <th data-field="Launch in CM"
+                       data-sortable="true">
+                           Launch in CM
+                   </th>
+               </tr>
+                <tbody>
+                  <tr>
+                    <td>Testing Crazy Long String. And another super long string.</td>
+                    <td>What if this is long too?</td>
+                    <td>ipsum</td>
+                    <td>An extended Bootstrap table with radio, checkbox, sort, pagination, and other added features. (supports twitter bootstrap v2 and v3)</td>
+                    <td>sit</td>
+                  </tr>
+                  <tr>
+                    <td>1,002</td>
+                    <td>amet</td>
+                    <td>consectetur</td>
+                    <td>adipiscing</td>
+                    <td>elit</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>Integer</td>
+                    <td>nec</td>
+                    <td>odio</td>
+                    <td>Praesent</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>libero</td>
+                    <td>Sed</td>
+                    <td>cursus</td>
+                    <td>ante</td>
+                  </tr>
+                  <tr>
+                    <td>1,004</td>
+                    <td>dapibus</td>
+                    <td>diam</td>
+                    <td>Sed</td>
+                    <td>nisi</td>
+                  </tr>
+                  <tr>
+                    <td>1,005</td>
+                    <td>Nulla</td>
+                    <td>quis</td>
+                    <td>sem</td>
+                    <td>at</td>
+                  </tr>
+                  <tr>
+                    <td>1,006</td>
+                    <td>nibh</td>
+                    <td>elementum</td>
+                    <td>imperdiet</td>
+                    <td>Duis</td>
+                  </tr>
+                  <tr>
+                    <td>1,007</td>
+                    <td>sagittis</td>
+                    <td>ipsum</td>
+                    <td>Praesent</td>
+                    <td>mauris</td>
+                  </tr>
+                </table>
 
        <!-- Bootstrap core JavaScript
        ================================================== -->
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.7.0/bootstrap-table.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.7.0/bootstrap-table.min.js"></script>
+
+<!-- Latest compiled and minified Locales -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.7.0/locale/bootstrap-table-zh-CN.min.js"></script>
        <!-- Placed at the end of the document so the pages load faster -->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-       <script src="../../dist/js/bootstrap.min.js"></script>
+      <!-- // <script src="jquery.min.js"></script>
+      // <script src="bootstrap.min.js"></script> -->
+      <script src="bootstrap-table.js"></script>
+      <!-- put your locale files after bootstrap-table.js -->
+      <!-- // <script src="bootstrap-table-zh-CN.js"></script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-       <script src="../../assets/js/vendor/holder.js"></script>
+      <script src="../../assets/js/vendor/holder.js"></script>
        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-       <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
      </body>
    </html>
