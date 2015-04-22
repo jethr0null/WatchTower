@@ -13,34 +13,31 @@
 
 ActiveRecord::Schema.define(version: 20150420003218) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "accounts", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "account_number"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "customer_id"
-    t.string   "customer_name"
+    t.string   "name",           limit: 255
+    t.integer  "account_number", limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "customer_id",    limit: 4
+    t.string   "customer_name",  limit: 255
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "password_digest"
-    t.string   "remember_digest"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "oauth_token"
+    t.string   "name",             limit: 255
+    t.string   "email",            limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "password_digest",  limit: 255
+    t.string   "remember_digest",  limit: 255
+    t.string   "provider",         limit: 255
+    t.string   "uid",              limit: 255
+    t.string   "oauth_token",      limit: 255
     t.datetime "oauth_expires_at"
   end
 
